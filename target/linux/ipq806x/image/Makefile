@@ -105,6 +105,18 @@ define Device/linksys_ea8500
 endef
 TARGET_DEVICES += linksys_ea8500
 
+define Device/wpq864
+	$(call Device/LegacyImage)
+	$(call Device/UbiFit)
+	DEVICE_DTS := qcom-ipq8064-wpq864
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	BOARD_NAME := wpq864
+	DEVICE_TITLE := Compex WPQ864
+	DEVICE_PACKAGES := ath10k-firmware-qca99x0
+endef
+TARGET_DEVICES += wpq864
+
 define Device/netgear_d7800
 	$(call Device/DniImage)
 	DEVICE_DTS := qcom-ipq8064-d7800
